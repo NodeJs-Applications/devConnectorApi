@@ -17,7 +17,7 @@ router.post('/' ,[
         const result = await useCaseCreateUser(db , req.body);
         res.send(result);
     } catch (error) {
-        res.send(error)
+        res.status(400).send(error)
     }
 })
 

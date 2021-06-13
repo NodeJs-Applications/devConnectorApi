@@ -1,5 +1,6 @@
 const {Sequelize , DataTypes , Model} = require("sequelize");
 const sequelize = require('../config/dbConnection');
+const Profile = require("./Profile");
 
 class User extends Model {}
 
@@ -23,5 +24,8 @@ User.init({
     sequelize , 
     tableName : 'tbl_user'
 })
+
+User.hasOne(Profile);
+Profile.belongsTo(User);
 
 module.exports = User;

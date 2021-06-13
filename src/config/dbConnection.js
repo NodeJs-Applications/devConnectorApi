@@ -17,7 +17,7 @@ const dbConnection = async () => {
     }
 
     try {
-        await sequelize.sync();
+        await sequelize.sync({alert : true});
         console.log("All models are in sync");
     } catch (error) {
         console.log("Models are not in sync")
